@@ -1,0 +1,13 @@
+{
+  "name": "browserver",
+  "description": "server browser",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "3.4.1",
+    "mocha": "1.13.0",
+    "expect.js" : "0.2.0",
+    "superagent": "0.15.5",
+    "mongoskin":"0.6.0"
+  }
+}
