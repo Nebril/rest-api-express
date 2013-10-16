@@ -1,10 +1,10 @@
 var express = require('express')
   , mongoskin = require('mongoskin')
 
-var app = express()
-app.use(express.bodyParser())
-
 var db = mongoskin.db('localhost:27017/test', {safe:true});
+var app = express()
+
+app.use(express.bodyParser())
 
 var pageSize = 10
 

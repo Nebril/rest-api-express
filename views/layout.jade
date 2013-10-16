@@ -1,0 +1,16 @@
+!!!5
+html
+  head
+    title #{title} - My Site
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    block scripts
+  body
+    header
+      h1 Browserver
+    .container
+      .sidebar
+        block servers
+      .sidebar
+        block users
+    footer
+      p Running on node with Express, Jade and Stylus
