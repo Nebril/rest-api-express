@@ -8,6 +8,13 @@ app.use(express.bodyParser())
 
 var pageSize = 10
 
+app.use(function(req, res, next) {
+    console.log("got a request");
+    res.header('Access-Control-Allow-Origin', "*");
+
+    next()
+});
+
 app.param('collectionName', function(req, res, next, collectionName){
   req.collection = db.collection(collectionName)
   return next()
