@@ -17,14 +17,14 @@ block content
 block users
   .widget
     h1 Users
-    u#userList.dataList
+    u#userList
       l
         | empty
 
 block servers
   .widget
     h1 Servers
-    u.dataList
+    u#serverList
       l
         | empty
 
@@ -32,3 +32,8 @@ block scripts
     script(src="/js/lib/jquery.js")
     script(src="/js/lib/underscore.js")
     script(src="/js/lib/backbone.js")
+    script(src="/js/models/User.js")
+    script(src="/js/models/Server.js")
+    script(src="/js/views/List.js")
+    
+    script(src="/js/app.js")
