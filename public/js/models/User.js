@@ -4,10 +4,6 @@ $(document).ready(function(){
         idAttribute: "_id",
         urlRoot:"http://localhost:3000/api/users",
 
-        initialize:function () {
-
-        },
-
         defaults: {
             _id: '',
             name: ''
@@ -15,7 +11,7 @@ $(document).ready(function(){
 
     });
 
-    browserver.models.UserCollection = Backbone.Collection.extend({
+    browserver.models.UserCollection =  browserver.models.Collection.extend({
 
         model: browserver.models.User,
 
