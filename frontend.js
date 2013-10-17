@@ -30,4 +30,5 @@ app.get('/', function (req, res) {
   )
 })
 
+console.log("Listening on 3001")
 app.listen(3001)
