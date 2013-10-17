@@ -1,31 +1,26 @@
-browserver.models.User = Backbone.Model.extend({
+$(document).ready(function(){
 
-    urlRoot:"http://localhost:3000/api/users",
+    browserver.models.User = Backbone.Model.extend({
+        idAttribute: "_id",
+        urlRoot:"http://localhost:3000/api/users",
 
-    initialize:function () {
+        initialize:function () {
 
-    },
+        },
 
-    defaults: {
-        _id: '',
-        name: ''
-    }
+        defaults: {
+            _id: '',
+            name: ''
+        }
+
+    });
+
+    browserver.models.UserCollection = Backbone.Collection.extend({
+
+        model: browserver.models.User,
+
+        url:"http://localhost:3000/api/users"
+
+    });
 
 });
-
-browserver.models.UserCollection = Backbone.Collection.extend({
-
-    model: browserver.User,
-
-    url:"http://localhost:3000/api/users"
-
-});
-
-/*var originalSync = Backbone.sync;
-Backbone.sync = function (method, model, options) {
-    if (method === "read") {
-        options.dataType = "jsonp";
-        return originalSync.apply(Backbone, arguments);
-    }
-
-};*/
