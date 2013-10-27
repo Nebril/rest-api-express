@@ -11,6 +11,9 @@ browserver.Router = Backbone.Router.extend({
 });
 
 $(document).ready(function () {    
+    Backbone.emulateHTTP = true;
+
+    
     var usersView = new browserver.views.List({
         el : $("#userList"),
         collection : new browserver.models.UserCollection(),
@@ -25,6 +28,12 @@ $(document).ready(function () {
         list_item_template : _.template("<li><%= name %></li>")
     });
 
+    var loginView = new browserver.views.Login({
+        model: new browserver.models.User(),
+        el : $("#login")
+    });
+
     browserver.router = new browserver.Router();
     Backbone.history.start();
 });
+

@@ -28,13 +28,25 @@ block servers
       l
         | empty
 
+block login
+  #login
+    span.message
+      | identify yourself
+    input(type='text', name='name')
+    button.login_button login
+
 block scripts
+    script(src="/js/lib/cookie.js")
     script(src="/js/lib/jquery.js")
     script(src="/js/lib/underscore.js")
     script(src="/js/lib/backbone.js")
+    script(src="/js/lib/Backbone.ModelBinder.min.js")
+
     script(src="/js/models/Collection.js")
+    script(src="/js/models/Model.js")
     script(src="/js/models/User.js")
     script(src="/js/models/Server.js")
     script(src="/js/views/List.js")
+    script(src="/js/views/Login.js")
     
     script(src="/js/app.js")

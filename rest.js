@@ -9,8 +9,11 @@ app.use(express.bodyParser())
 var pageSize = 10
 
 app.use(function(req, res, next) {
-    console.log("got a request");
     res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Methods', "GET,PUT,DELETE,POST,OPTIONS");
+    res.header('Access-Control-Allow-Headers', req.header("Access-Control-Request-Headers"));
+    res.header('Allow', "*");
+
 
     next()
 });
@@ -32,6 +35,13 @@ app.get('/api/:collectionName', function(req, res, next) {
 })
 
 app.post('/api/:collectionName', function(req, res, next) {
+  req.collection.insert(req.body, {}, function(e, results){
+    if (e) return next(e)
+    res.send(results)
+  })
+})
+
+app.put('/api/:collectionName', function(req, res, next) {
   req.collection.insert(req.body, {}, function(e, results){
     if (e) return next(e)
     res.send(results)
