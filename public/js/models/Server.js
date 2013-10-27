@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    browserver.models.Server = Backbone.Model.extend({
+    browserver.models.Server = browserver.models.Model.extend({
         idAttribute : "_id",
         urlRoot:"http://localhost:3000/api/servers",
 

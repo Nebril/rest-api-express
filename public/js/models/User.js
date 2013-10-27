@@ -1,11 +1,10 @@
 $(document).ready(function(){
 
-    browserver.models.User = Backbone.Model.extend({
+    browserver.models.User = browserver.models.Model.extend({
         idAttribute: "_id",
         urlRoot:"http://localhost:3000/api/users",
 
         defaults: {
-            _id: '',
             name: ''
         }
 
